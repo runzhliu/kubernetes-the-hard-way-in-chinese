@@ -6,7 +6,7 @@ authentication:
   webhook:
     enabled: true
   x509:
-    clientCAFile: "/var/lib/kubelet/ca.crt"
+    clientCAFile: "/etc/kubernetes/pki/ca.crt"
 authorization:
   mode: Webhook
 clusterDomain: "cluster.local"
@@ -14,7 +14,7 @@ clusterDNS:
   - "10.32.0.10"
 cgroupDriver: systemd
 containerRuntimeEndpoint: "unix:///var/run/containerd/containerd.sock"
-podCIDR: "SUBNET"
+podCIDR: "10.10.1.0/24"
 resolvConf: "/etc/resolv.conf"
 runtimeRequestTimeout: "15m"
 tlsCertFile: "/var/lib/kubelet/kubelet.crt"
